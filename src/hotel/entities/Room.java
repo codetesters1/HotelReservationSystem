@@ -61,12 +61,18 @@ public class Room {
 
 	public Booking book(Guest guest, Date arrivalDate, int stayLength, int numberOfOccupants, CreditCard creditCard) { //This mehtod is part of my unit testing
 		// TODO Auto-generated method stub
+		 
 		return null;		
 	}
 
 
 	public void checkin() {
 		// TODO Auto-generated method stub
+		if (isReady() != State.READY){											//if condition to check if the state is not ready
+			throw new RuntimeException("Room state is not ready");  			//throws new run time exception 
+		}
+		this.state = State.OCCUPIED;											//Change room state to OCCUPIED
+		Booking.state = State.CHECKED_IN;										//Change booking state to CHECKED_IN
 	}
 
 
