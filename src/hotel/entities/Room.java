@@ -59,7 +59,7 @@ public class Room {
 	}
 
 
-	public Booking book(Guest guest, Date arrivalDate, int stayLength, int numberOfOccupants, CreditCard creditCard) {
+	public Booking book(Guest guest, Date arrivalDate, int stayLength, int numberOfOccupants, CreditCard creditCard) { //This mehtod is part of my unit testing
 		// TODO Auto-generated method stub
 		return null;		
 	}
