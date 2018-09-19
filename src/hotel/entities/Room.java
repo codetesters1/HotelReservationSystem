@@ -68,7 +68,7 @@ public class Room {
 
 	public void checkin() {
 		// TODO Auto-generated method stub
-		if (isReady() != State.READY){											//if condition to check if the state is not ready
+		if (!isReady()){											//if condition to check if the state is not ready
 			throw new RuntimeException("Room state is not ready");  			//throws new run time exception 
 		}
 		this.state = State.OCCUPIED;											//Change room state to OCCUPIED
