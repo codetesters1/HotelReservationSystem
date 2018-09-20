@@ -144,7 +144,8 @@ public class Booking {
 
 
 	public void addServiceCharge(ServiceType serviceType, double cost) {
-		// TODO Auto-generated method stub
+		ServiceCharge service=new ServiceCharge(serviceType,cost); //Creates a new service charge
+    		charges.add(service); //adding entry to return list by getCharges()
 	}
 
 
