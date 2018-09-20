@@ -133,9 +133,7 @@ public class Booking {
 
 
 	public void checkIn() {
-		// TODO Auto-generated method stub
-		if(!isPending()) //throws a RuntimeException if booking state is not PENDING
-		{
+		if(!isPending()){ //throws a RuntimeException if booking state is not PENDING
 			throw  new RuntimeException("Room is not Ready!");
 		}
 		room.checkin(); //Room associated with booking state set to OCCUPiED
@@ -149,7 +147,11 @@ public class Booking {
 
 
 	public void checkOut() {
-		// TODO Auto-generated method stub
+		if(!isCheckedIn()){ //throws a RuntimeException if booking state is not CHECKED_IN
+      			throw  new RuntimeException("Not Checked In!");
+    		}
+    		room.isReady(); //Room associated with booking state set to READY
+    		isCheckedOut(); //Booking state set to CHECKED_OUT
 	}
 
 }
