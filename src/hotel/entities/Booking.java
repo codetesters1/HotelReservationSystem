@@ -136,8 +136,10 @@ public class Booking {
 		if(!isPending()){ //throws a RuntimeException if booking state is not PENDING
 			throw  new RuntimeException("Room is not Ready!");
 		}
-		room.checkin(); //Room associated with booking state set to OCCUPiED
-		isCheckedIn(); // Booking state set to CHECKED_IN
+		else{
+			room.checkin(); //Room associated with booking state set to OCCUPiED
+			isCheckedIn(); // Booking state set to CHECKED_IN
+		}
 	}
 
 
@@ -150,8 +152,10 @@ public class Booking {
 		if(!isCheckedIn()){ //throws a RuntimeException if booking state is not CHECKED_IN
       			throw  new RuntimeException("Not Checked In!");
     		}
-    		room.isReady(); //Room associated with booking state set to READY
-    		isCheckedOut(); //Booking state set to CHECKED_OUT
+		else{
+    			room.isReady(); //Room associated with booking state set to READY
+    			isCheckedOut(); //Booking state set to CHECKED_OUT
+		}
 	}
 
 }
