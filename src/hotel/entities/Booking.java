@@ -134,6 +134,12 @@ public class Booking {
 
 	public void checkIn() {
 		// TODO Auto-generated method stub
+		if(!isPending()) //throws a RuntimeException if booking state is not PENDING
+		{
+			throw  new RuntimeException("Room is not Ready!");
+		}
+		room.checkin(); //Room associated with booking state set to OCCUPiED
+		isCheckedIn(); // Booking state set to CHECKED_IN
 	}
 
 
