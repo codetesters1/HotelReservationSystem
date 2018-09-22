@@ -85,12 +85,19 @@ public class Hotel {
 	}
 
 	
+	// implementation - HIJAS (21/09/2018)
 	public long book(Room room, Guest guest, 
 			Date arrivalDate, int stayLength, int occupantNumber,
 			CreditCard creditCard) {
-		// TODO Auto-generated method stub
-		return 0L;		
+		
+            Booking booking = room.book(guest, arrivalDate, stayLength, occupantNumber, creditCard);
+            long bookingConfirmationNumber = booking.getConfirmationNumber();
+            booking.doTimesConflict(arrivalDate, stayLength);
+            bookingsByConfirmationNumber.put(bookingConfirmationNumber, booking);
+                
+            return bookingConfirmationNumber;		
 	}
+
 
 	
 	// coded by HIJAS(21/09/2018)
