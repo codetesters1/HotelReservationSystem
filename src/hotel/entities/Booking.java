@@ -134,7 +134,8 @@ public class Booking {
 
 	public void checkIn() {
 		if(!isPending()){ //throws a RuntimeException if booking state is not PENDING
-			throw  new RuntimeException("Room is not Ready!");
+			String msg = String.format("Booking: checkIn : bad state : %s", state);
+			throw  new RuntimeException(msg);
 		}
 		else{
 			room.checkin(); //Room associated with booking state set to OCCUPiED
@@ -151,7 +152,8 @@ public class Booking {
 
 	public void checkOut() {
 		if(!isCheckedIn()){ //throws a RuntimeException if booking state is not CHECKED_IN
-      			throw  new RuntimeException("Not Checked In!");
+			String msg = String.format("Booking: checkOut : bad state : %s", state);
+      			throw  new RuntimeException(msg);
     		}
 		else{
     			room.isReady(); //Room associated with booking state set to READY
