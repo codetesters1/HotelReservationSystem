@@ -93,8 +93,18 @@ public class Hotel {
 	}
 
 	
+	// coded by HIJAS(21/09/2018)
 	public void checkin(long confirmationNumber) {
-		// TODO Auto-generated method stub
+            
+            Booking booking = findBookingByConfirmationNumber(confirmationNumber);
+            if(booking != null){
+                int roomId = booking.getRoomId();
+                booking.checkIn();
+                activeBookingsByRoomId.put(roomId, booking);
+            }else{
+                throw new RuntimeException("Booking by this confirmation is not available.");
+            }
+            
 	}
 
 
