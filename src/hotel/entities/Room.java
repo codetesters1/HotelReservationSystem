@@ -72,7 +72,7 @@ public class Room {
 			throw new RuntimeException("Room state is not ready");  			//throws new run time exception 
 		}
 		this.state = State.OCCUPIED;											//Change room state to OCCUPIED
-		Booking.state = State.CHECKED_IN;										//Change booking state to CHECKED_IN
+		bookings.isCheckedIn();												//Change booking state to CHECKED_IN
 	}
 
 
