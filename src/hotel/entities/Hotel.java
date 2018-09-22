@@ -122,8 +122,17 @@ public class Hotel {
 	}
 
 	
+	// implementation - HIJAS (21/09/2018)
 	public void checkout(int roomId) {
-		// TODO Auto-generated method stub
+		
+            Booking booking = findActiveBookingByRoomId(roomId);
+            if(booking != null){
+                booking.checkOut();
+                activeBookingsByRoomId.remove(roomId);
+            }else{
+                throw new RuntimeException("No any bookings for this roomId");
+                        
+            }
 	}
 
 
