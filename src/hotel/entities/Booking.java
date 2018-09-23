@@ -132,18 +132,34 @@ public class Booking {
 	}
 
 
-	public void checkIn() {
-		// TODO Auto-generated method stub
+	// Coded by Bhanuka
+	public void checkIn() throws  RuntimeException {
+            if(state != State.PENDING)
+                throw new RuntimeException();
+            else {
+                room.checkin();
+		state = State.CHECKED_IN;
+            }
 	}
 
 
-	public void addServiceCharge(ServiceType serviceType, double cost) {
-		// TODO Auto-generated method stub
+// Coded by Bhanuka
+
+	public void addServiceCharge(ServiceType serviceType, double cost) throws  RuntimeException {
+            if(state != State.CHECKED_IN)
+                throw new RuntimeException();
+            else
+		charges.add(new ServiceCharge(serviceType,cost));       // adding ServiceCharge
 	}
 
-
-	public void checkOut() {
-		// TODO Auto-generated method stub
-	}
+// Coded by Bhanuka
+	public void checkOut() throws  RuntimeException {
+            if(state != State.CHECKED_IN)
+                throw new RuntimeException();
+            else {
+                room.checkout(this);
+		state = State.CHECKED_OUT;	// Setting to Checked Out
+            }
+        }
 
 }
