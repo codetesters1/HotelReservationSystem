@@ -52,8 +52,7 @@ public class BookingTest {
         boolean expResult = false;
         boolean result = instance.doTimesConflict(requestedArrival, stayLength);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -66,8 +65,7 @@ public class BookingTest {
         long expResult = 0L;
         long result = instance.getConfirmationNumber();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -80,8 +78,7 @@ public class BookingTest {
         int expResult = 0;
         int result = instance.getRoomId();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+  
     }
 
     /**
@@ -94,8 +91,7 @@ public class BookingTest {
         Room expResult = null;
         Room result = instance.getRoom();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     
     }
 
     /**
@@ -108,8 +104,7 @@ public class BookingTest {
         Date expResult = null;
         Date result = instance.getArrivalDate();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     
     }
 
     /**
@@ -122,8 +117,7 @@ public class BookingTest {
         int expResult = 0;
         int result = instance.getStayLength();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
     /**
@@ -136,8 +130,7 @@ public class BookingTest {
         Guest expResult = null;
         Guest result = instance.getGuest();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+   
     }
 
     /**
@@ -150,8 +143,7 @@ public class BookingTest {
         CreditCard expResult = null;
         CreditCard result = instance.getCreditCard();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -164,8 +156,7 @@ public class BookingTest {
         boolean expResult = false;
         boolean result = instance.isPending();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
     /**
@@ -178,8 +169,7 @@ public class BookingTest {
         boolean expResult = false;
         boolean result = instance.isCheckedIn();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -192,8 +182,7 @@ public class BookingTest {
         boolean expResult = false;
         boolean result = instance.isCheckedOut();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -206,8 +195,7 @@ public class BookingTest {
         List<ServiceCharge> expResult = null;
         List<ServiceCharge> result = instance.getCharges();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+ 
     }
 
     /**
@@ -218,8 +206,7 @@ public class BookingTest {
         System.out.println("checkIn");
         Booking instance = null;
         instance.checkIn();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -232,8 +219,7 @@ public class BookingTest {
         double cost = 0.0;
         Booking instance = null;
         instance.addServiceCharge(serviceType, cost);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
     /**
@@ -244,8 +230,7 @@ public class BookingTest {
         System.out.println("checkOut");
         Booking instance = null;
         instance.checkOut();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
     
 }
