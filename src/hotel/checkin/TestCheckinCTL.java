@@ -1,3 +1,7 @@
+package hotel.checkin;
+
+import hotel.entities.Hotel;
+
 public class TestCheckinCTL{
 	
 	private Hotel hotel;
@@ -7,16 +11,11 @@ public class TestCheckinCTL{
      ctl.checkInConfirmed(true); // checking true
 	 
 	 assert ctl.getState() == CheckinCTL.State.COMPLETED;
-	 
+
 	 
      ctl.checkInConfirmed(false); //checking false
 	 
 	 assert ctl.getState() == CheckinCTL.State.CANCELLED;
 	}
-	
-	public static void main(String[] args){
-		TestCheckinCTL testCheckinCTL = new TestCheckinCTL();
-        testCheckinCTL.TestcheckInConfirmed();
-    
-	}
+
 }
