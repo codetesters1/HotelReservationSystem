@@ -85,60 +85,69 @@ public class Hotel {
 	}
 
 	
-	// implementation - HIJAS (21/09/2018)
+	//vidath
 	public long book(Room room, Guest guest, 
 			Date arrivalDate, int stayLength, int occupantNumber,
 			CreditCard creditCard) {
 		
-            Booking booking = room.book(guest, arrivalDate, stayLength, occupantNumber, creditCard);
-            long bookingConfirmationNumber = booking.getConfirmationNumber();
-            booking.doTimesConflict(arrivalDate, stayLength);
-            bookingsByConfirmationNumber.put(bookingConfirmationNumber, booking);
-                
-            return bookingConfirmationNumber;		
+             if(room.isAvailable(arrivalDate, stayLength)){
+                    room.book(guest, arrivalDate, stayLength, occupantNumber, creditCard);
+                    
+                    Booking booking = new Booking(guest, room, arrivalDate, stayLength, occupantNumber, creditCard);
+                    return booking.getConfirmationNumber();
+                }else{
+                    return 0L;
+                }	
 	}
 
 
 	
-	// coded by HIJAS(21/09/2018)
+	// vidath
 	public void checkin(long confirmationNumber) {
             
+          //Finding booking by confirmation number
             Booking booking = findBookingByConfirmationNumber(confirmationNumber);
-            if(booking != null){
+            //if booking result is null
+            if(booking == null){
+                //throws a RuntimeException if no booking for confirmation number exists
+                throw new RuntimeException("Booking is not available.");
+                
+            }else{
                 int roomId = booking.getRoomId();
+                //set status as checkin
                 booking.checkIn();
                 activeBookingsByRoomId.put(roomId, booking);
-            }else{
-                throw new RuntimeException("Booking by this confirmation is not available.");
             }
             
 	}
 
-
-	// implementation - HIJAS (21/09/2018)
+	//vidath
 	public void addServiceCharge(int roomId, ServiceType serviceType, double cost) {
-		
+		// TODO Auto-generated method stub
+                //Finding booking by room id 
             Booking booking = findActiveBookingByRoomId(roomId); 
-            if(booking != null){
-                booking.addServiceCharge(serviceType, cost);
+            //if booking result is null
+            if(booking == null){
+                //throws a RuntimeException 
+                throw new RuntimeException("Booking is not available.");
+                
             }else{
-                throw new RuntimeException("No any bookings for this roomId");
-                        
+                booking.addServiceCharge(serviceType, cost);
             }
-            
 	}
 
-	
-	// implementation - HIJAS (21/09/2018)
+	//vidath
 	public void checkout(int roomId) {
-		
-            Booking booking = findActiveBookingByRoomId(roomId);
-            if(booking != null){
+		    //Finding booking by room id 
+            Booking booking = findActiveBookingByRoomId(roomId); 
+            //if booking result is null
+            if(booking == null){
+                //throws a RuntimeException 
+                throw new RuntimeException("Booking is not available.");
+                
+            }else{
                 booking.checkOut();
                 activeBookingsByRoomId.remove(roomId);
-            }else{
-                throw new RuntimeException("No any bookings for this roomId");
-                        
             }
 	}
 
