@@ -81,6 +81,15 @@ public class CheckinCTL {
 	
 	public void checkInConfirmed(boolean confirmed) {
 		// TODO Auto-generated method stub
+		
+		if(!confirmed) {
+                    //Throws runtime exception state is not confirming  
+                    throw new RuntimeException("Checking in state is not confirming");    
+		}else{
+                    checkInUI.displayMessage("Checking in is confirmed");
+                    state = State.COMPLETED; //Settinh state Completed				
+                    checkInUI.setState(CheckinUI.State.COMPLETED); //Setting UI state completed
+                }
 	}
 
 
