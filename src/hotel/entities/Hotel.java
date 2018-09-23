@@ -102,16 +102,21 @@ public class Hotel {
 
 
 	
-	// coded by HIJAS(21/09/2018)
+	// vidath
 	public void checkin(long confirmationNumber) {
             
+          //Finding booking by confirmation number
             Booking booking = findBookingByConfirmationNumber(confirmationNumber);
-            if(booking != null){
+            //if booking result is null
+            if(booking == null){
+                //throws a RuntimeException if no booking for confirmation number exists
+                throw new RuntimeException("Booking is not available.");
+                
+            }else{
                 int roomId = booking.getRoomId();
+                //set status as checkin
                 booking.checkIn();
                 activeBookingsByRoomId.put(roomId, booking);
-            }else{
-                throw new RuntimeException("Booking by this confirmation is not available.");
             }
             
 	}
