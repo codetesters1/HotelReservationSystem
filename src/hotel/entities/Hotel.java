@@ -85,17 +85,19 @@ public class Hotel {
 	}
 
 	
-	// implementation - HIJAS (21/09/2018)
+	//vidath
 	public long book(Room room, Guest guest, 
 			Date arrivalDate, int stayLength, int occupantNumber,
 			CreditCard creditCard) {
 		
-            Booking booking = room.book(guest, arrivalDate, stayLength, occupantNumber, creditCard);
-            long bookingConfirmationNumber = booking.getConfirmationNumber();
-            booking.doTimesConflict(arrivalDate, stayLength);
-            bookingsByConfirmationNumber.put(bookingConfirmationNumber, booking);
-                
-            return bookingConfirmationNumber;		
+             if(room.isAvailable(arrivalDate, stayLength)){
+                    room.book(guest, arrivalDate, stayLength, occupantNumber, creditCard);
+                    
+                    Booking booking = new Booking(guest, room, arrivalDate, stayLength, occupantNumber, creditCard);
+                    return booking.getConfirmationNumber();
+                }else{
+                    return 0L;
+                }	
 	}
 
 
