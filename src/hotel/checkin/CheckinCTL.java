@@ -9,7 +9,7 @@ import hotel.utils.IOUtils;
 
 public class CheckinCTL {
 	
-	private enum State {CHECKING, CONFIRMING, CANCELLED, COMPLETED };
+	public static enum State {CHECKING, CONFIRMING, CANCELLED, COMPLETED };  // changed to public 
 	
 	private Hotel hotel;
 	private CheckinUI checkInUI;
@@ -84,7 +84,7 @@ public class CheckinCTL {
 		if (state != State.CONFIRMING){
 			throw new RuntimeException("Checkin state is not CONFIRMING");    //RuntimeException
 		}
-		else if (state = State.CONFIRMING){
+		else if (confirmed){
 			hotel.checkin(confirmationNumber);
 			checkInUI.displayMessage("Checkin confirmed");
 			this.state = State.COMPLETED;
@@ -107,6 +107,11 @@ public class CheckinCTL {
 	
 	public void completed() {
 		checkInUI.displayMessage("Checking in completed");
+	}
+	
+	//Getter Method
+	public State getState(){
+		return this.state;	
 	}
 
 }
