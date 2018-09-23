@@ -121,18 +121,19 @@ public class Hotel {
             
 	}
 
-
-	// implementation - HIJAS (21/09/2018)
+	//vidath
 	public void addServiceCharge(int roomId, ServiceType serviceType, double cost) {
-		
+		// TODO Auto-generated method stub
+                //Finding booking by room id 
             Booking booking = findActiveBookingByRoomId(roomId); 
-            if(booking != null){
-                booking.addServiceCharge(serviceType, cost);
+            //if booking result is null
+            if(booking == null){
+                //throws a RuntimeException 
+                throw new RuntimeException("Booking is not available.");
+                
             }else{
-                throw new RuntimeException("No any bookings for this roomId");
-                        
+                booking.addServiceCharge(serviceType, cost);
             }
-            
 	}
 
 	
