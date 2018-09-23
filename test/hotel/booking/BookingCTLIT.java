@@ -21,6 +21,8 @@ import static org.junit.Assert.*;
  *
  * @author Dushan
  */
+
+//Integration Testing
 public class BookingCTLIT {
     
     private BookingCTL bookCTL;
