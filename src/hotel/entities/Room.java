@@ -9,7 +9,7 @@ import hotel.utils.IOUtils;
 
 public class Room {
 	
-	private enum State {READY, OCCUPIED}
+	public static enum State {READY, OCCUPIED}   // changed it to public for testing
 	
 	int id;
 	RoomType roomType;
@@ -61,8 +61,9 @@ public class Room {
 
 	public Booking book(Guest guest, Date arrivalDate, int stayLength, int numberOfOccupants, CreditCard creditCard) { //This mehtod is part of my unit testing
 		// TODO Auto-generated method stub
-		 
-		return null;		
+		Booking booking = new Booking(guest, this, arrivalDate, stayLength, numberOfOccupants,creditCard);
+		bookings.add(booking);
+		return booking;
 	}
 
 
@@ -72,17 +73,31 @@ public class Room {
 			throw new RuntimeException("Room state is not ready");  			//throws new run time exception 
 		}
 		this.state = State.OCCUPIED;											//Change room state to OCCUPIED
-		bookings.isCheckedIn();												//Change booking state to CHECKED_IN
+		Booking recentBooking = bookings.get(bookings,size()-1);
+		recentBooking.checkIn();										//Change booking state to CHECKED_IN
 	}
 
 
 	public void checkout(Booking booking) {
 		// TODO Auto-generated method stub
-		if (isReady() != State.OCCUPIED){											//if condition to check if the state is not occupied
+		if (state != State.OCCUPIED){											//if condition to check if the state is not occupied
 			throw new RuntimeException("Room state is not occupied");  			//throws new run time exception 
 		}
+		this.state = State.READY;
+		booking.checkOut();
+		
 		
 	}
+	
+	//Getter methods
+	public List<Booking> getBookings(){
+		return this.bookings;
+	}
+	
+	public State getState(){
+		return this.state;	
+	}
+	
 
 
 }
