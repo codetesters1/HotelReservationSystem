@@ -152,9 +152,14 @@ public class Booking {
 		charges.add(new ServiceCharge(serviceType,cost));       // adding ServiceCharge
 	}
 
-
-	public void checkOut() {
-		// TODO Auto-generated method stub
-	}
+// Coded by Bhanuka
+	public void checkOut() throws  RuntimeException {
+            if(state != State.CHECKED_IN)
+                throw new RuntimeException();
+            else {
+                room.checkout(this);
+		state = State.CHECKED_OUT;	// Setting to Checked Out
+            }
+        }
 
 }
