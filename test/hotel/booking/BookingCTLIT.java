@@ -48,8 +48,7 @@ public class BookingCTLIT {
         System.out.println("run");
         BookingCTL instance = null;
         instance.run();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+   
     }
 
     /**
@@ -61,8 +60,7 @@ public class BookingCTLIT {
         int phoneNumber = 0;
         BookingCTL instance = null;
         instance.phoneNumberEntered(phoneNumber);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -75,8 +73,7 @@ public class BookingCTLIT {
         String address = "";
         BookingCTL instance = null;
         instance.guestDetailsEntered(name, address);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -89,8 +86,7 @@ public class BookingCTLIT {
         int occupantNumber = 0;
         BookingCTL instance = null;
         instance.roomTypeAndOccupantsEntered(selectedRoomType, occupantNumber);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -103,8 +99,7 @@ public class BookingCTLIT {
         int stayLength = 0;
         BookingCTL instance = null;
         instance.bookingTimesEntered(arrivalDate, stayLength);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+     
     }
 
     /**
@@ -118,8 +113,7 @@ public class BookingCTLIT {
         int ccv = 0;
         BookingCTL instance = null;
         instance.creditDetailsEntered(type, number, ccv);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    
     }
 
     /**
@@ -130,8 +124,7 @@ public class BookingCTLIT {
         System.out.println("cancel");
         BookingCTL instance = null;
         instance.cancel();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
 
     /**
@@ -142,8 +135,7 @@ public class BookingCTLIT {
         System.out.println("completed");
         BookingCTL instance = null;
         instance.completed();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
     }
     
 }
