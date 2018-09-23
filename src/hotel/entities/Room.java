@@ -61,10 +61,10 @@ public class Room {
 
 	public Booking book(Guest guest, Date arrivalDate, int stayLength, int numberOfOccupants, CreditCard creditCard) { //This mehtod is part of my unit testing
 		// TODO Auto-generated method stub
-		Booking booking = new Booking(guest, this, arrivalDate, stayLength, numberOfOccupants,creditCard);
-		bookings.add(booking);
-		return booking;
-	}
+		Booking booking = new Booking(guest, this, arrivalDate, stayLength, numberOfOccupants,creditCard);   //Creating a new booking
+		bookings.add(booking);   //Adding into bookings list
+		return booking;         //Returning a new booking
+	} 
 
 
 	public void checkin() {
@@ -83,8 +83,8 @@ public class Room {
 		if (state != State.OCCUPIED){											//if condition to check if the state is not occupied
 			throw new RuntimeException("Room state is not occupied");  			//throws new run time exception 
 		}
-		this.state = State.READY;
-		booking.checkOut();
+		this.state = State.READY;            // Set room state to READY
+		booking.checkOut();                      //Change booking state to CHECKED_OUT
 		
 		
 	}
